@@ -1,0 +1,19 @@
+.product{
+    padding: 5%;
+    margin: 1% 1%;
+    border: 1px solid blue;
+    border-radius: 3%;
+}
+.prod-img{
+    width: 100%;
+    border-radius: 2%;
+}
+.btn-add{
+    border: none;
+    border-radius: 2%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+.btn-add:hover{
+    background-color: aqua;
+}

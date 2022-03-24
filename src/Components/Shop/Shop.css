@@ -1,0 +1,13 @@
+.shop-container{
+    margin: 2% 3% 0%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.products{
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.shop-right{
+    margin-left: 10%
+}

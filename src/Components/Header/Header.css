@@ -1,0 +1,19 @@
+.Header{
+    height:80px;
+    background-color : rgb(3, 5, 105);
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-left: 140px;
+padding-right:140px;
+}
+a{
+    color: white;
+    padding-left: 5px;
+text-decoration: none;
+}
+.header-buttons{
+     display: grid;
+     grid-template-columns: repeat(4,1fr);
+     grid-gap: 2%;
+}
