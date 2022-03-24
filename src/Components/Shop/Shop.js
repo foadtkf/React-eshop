@@ -12,7 +12,6 @@ const Shop = () => {
     const addToCart=(product)=>{
         const newCart=[...cart,product]
         setCart(newCart)
-        console.log(newCart)
     }
     return (
         <div className='shop-container'>
@@ -21,8 +20,10 @@ const Shop = () => {
                     products.map(product=><Product addToCart={addToCart}  key={product.id} product={product}></Product>)
                 }
             </div>
-            <div className='shop-right'>
+            <div>
+            <div className='shop-right' id='stick'>
                 <h1>Selected items: {cart.length}</h1>
+            </div>
             </div>
         </div>
     );
