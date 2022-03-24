@@ -34,8 +34,8 @@ const Shop = () => {
                 <h6>Selected items: {cart.length}</h6>
             <h6>Total price: {price}$</h6>
             <h6>Total shipping: {shipping}$</h6>
-            <h6>Total tax: {tax.toFixed(2)}$</h6>
-            <h6>Grand total: {(price+shipping+tax).toFixed(2)}$</h6>
+            <h6>Total tax: {tax}$</h6>
+            <h6>Grand total: {(price+shipping+tax)}$</h6>
             </div>
             </div>
         </div>
