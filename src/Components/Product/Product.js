@@ -1,7 +1,7 @@
 import React from 'react';
 import './Product.css'
 const Product = (props) => {
-    const {id,category,name,seller,price,stock,ratings,ratingsCount,img,shipping,quantity}=props.product
+    const {category,name,price,stock,img}=props.product
 
     return (
         <div className='product'>
