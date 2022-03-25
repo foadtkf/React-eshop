@@ -1,12 +1,23 @@
 .shop-container{
-    margin: 2% 3% 0%;
+    margin: 2% 1% 0% 2%;
     display: grid;
     grid-template-columns: 4fr 1fr;
 }
 .products{
     display: grid;
-    display: grid;
     grid-template-columns: repeat(3,1fr);
+}
+@media screen and (max-width:600px) {
+    .shop-container{
+        margin: 2% 1% 0% 2%;
+        display: grid;
+        grid-template-columns:1fr;
+    }
+    .products{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
 }
 .shop-right{
     height: 640px;

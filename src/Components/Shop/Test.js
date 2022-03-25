@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import './Shop.css';
 const Shop = () => {
+
     const [products,setProduct]=useState([]);
     const [cart,setCart]=useState([])
     const [price,setPrice]=useState([0])
@@ -16,16 +17,35 @@ const Shop = () => {
     const addToCart=(product)=>{
         const newCart=[...cart,product]
         setCart(newCart)
-        newCart.map(scart=>setTax((parseFloat(scart.price)*0.05)+parseFloat(tax)))
-        newCart.map(scart=>setPrice(parseInt(scart.price)+parseInt(price)))
-        newCart.map(scart=>setShipping(parseInt(scart.shipping)+parseInt(shipping)))
-        // newCart.map(scart=>setShipping(parseInt(scart.shipping+parseInt(shipping)))
+let shoppingCart=getshoppingCart()
+let val=shoppingCart[product.id]
+if(val){
+    const newqty=parseInt(val)+1
+shoppingCart[product.id]=newqty
+    // localStorage.setItem(id,newqty)
+}
+else{
+    shoppingCart[product.id]=1
+    // localStorage.setItem(id,1)
+}
+localStorage.setItem('Shopping cart',JSON.stringify(shoppingCart))
+newCart.map(scart=>setTax((parseFloat(scart.price)*0.05)+parseFloat(tax)))
+newCart.map(scart=>setPrice(parseInt(scart.price)+parseInt(price)))
+newCart.map(scart=>setShipping(parseInt(scart.shipping)+parseInt(shipping)))
+}
+const getshoppingCart=()=>{
+    let shoppingCart={}
+    const storedCart=localStorage.getItem('Shopping cart')
+    if(storedCart){
+        shoppingCart= JSON.parse(storedCart)
     }
+   return shoppingCart 
+}
     return (
         <div className='shop-container'>
             <div className='products'>
                 {
-                    products.map(product=><Product addToCart={addToCart}  key={product.id} product={product} ></Product>)
+                    products.map(product=><Product addToCart={addToCart}  key={product.id} product={product}></Product>)
                 }
             </div>
             <div>
